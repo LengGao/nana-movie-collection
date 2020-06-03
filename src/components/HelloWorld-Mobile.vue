@@ -1,14 +1,15 @@
 <template>
-  <div class="hello">
+  <div class="HelloWorld_Mobile">
     <div class="header">
-      <h1 class="h1">娜娜原创</h1>
+      <span>娜娜原创</span>
     </div>
     <div class="content">
       <el-carousel @change='carousel_trigger'
                    :autoplay="false"
                    arrow="never"
                    type="card"
-                   height="775px"
+                   height="10.3333rem"
+                   style="width: 100%;"
                    v-show="!isVedioPlay">
         <el-carousel-item v-for="(work,index) in works"
                           :key="index">
@@ -20,14 +21,13 @@
         </el-carousel-item>
       </el-carousel>
       <div v-if="isVedioPlay">
-        <el-button type="danger"
-                   @click="closeIframe"
-                   size='mini'
-                   style="position: fixed;"
-                   plain>关闭
-        </el-button>
+        <van-button type="danger"
+                    @click="closeIframe"
+                    style="position: fixed;"
+                    plain
+                    size='mini'>关闭</van-button>
         <iframe ref="myiframe"
-                height=775
+                height='200'
                 width=100%
                 autoplay='true'
                 :src='playUrl'
@@ -42,7 +42,8 @@
                    :autoplay="false"
                    arrow="never"
                    type="card"
-                   style="width:100%; height: 162px; overflow: hidden;"
+                   class="carousel_info"
+                   style="width: 100%; height: 6.4rem; overflow: hidden;"
                    v-show="!isVedioPlay">
         <el-carousel-item v-for="(item,index) in athor_info"
                           :key="index">
@@ -58,17 +59,17 @@
           </div>
         </el-carousel-item>
       </el-carousel>
-      <el-row style="margin-top: 50px;">
+      <el-row class="contact">
         <el-col :span="24">
           <el-card :body-style="{ padding: '0px'}"
                    style=" background-color: transparent; border: 0">
             <img src="@/static/img/woman.jpg"
                  class="image" />
-            <div style="padding: 28px;">
+            <div style="padding: 0.2667rem;">
               <div class="bottom clearfix">
                 <time class="time">{{ currentDate }}</time>
                 <el-button type="text"
-                           class="button"
+                           class="bottom"
                            @click="isVisible = !isVisible">
                   联系作者</el-button>
               </div>
@@ -80,14 +81,14 @@
     <el-dialog :visible.sync='isVisible'
                title='联系作者'
                :modal='false'
-               width="25%">
+               width="80%">
       <el-row>
-        <el-col :span="6">QQ：</el-col>
-        <el-col :span="6">2448745034</el-col>
+        <el-col :span="4">QQ：</el-col>
+        <el-col :span="10">2448745034</el-col>
       </el-row>
       <el-row>
-        <el-col :span="6">VX：</el-col>
-        <el-col :span="6">GL24487</el-col>
+        <el-col :span="4">VX：</el-col>
+        <el-col :span="10">GL24487</el-col>
       </el-row>
     </el-dialog>
   </div>
@@ -95,7 +96,7 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'HelloWorld-Mobile',
   data () {
     return {
       initial_index: 0,//走马灯其实位置
@@ -175,59 +176,40 @@ export default {
 <style scoped>
 .hello {
   text-align: center;
+    overflow: hidden;
 }
 
-/* 头部动画 */
 @-webkit-keyframes mymove {
-    50% {box-shadow: 10px 20px 30px blue;}
+    50% {box-shadow: 0.2667rem 0.5333rem 0.8rem blue;}
 }
 
-/* Standard syntax */
 @keyframes mymove {
-    50% {box-shadow: 10px 20px 30px blue;}
+    50% {box-shadow: 0.2667rem 0.5333rem 0.8rem blue;}
 }
-
 
 .header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
-  color: #FFFFFB;
-  line-height: 96px;
+  font-size: 1.4933rem;
+  line-height: 5.12rem;
+  color: #FFFFFB;  
   background-color: transparent;
-    text-shadow: 0 0 20px #fdec84,
-          10px -10px 30px #ffae35,
-          20px -20px 40px #ec760c,
-          -20px -60px 50px #cd4607,
-          0px -80px 60px #973717,
-          10px -40px 70px #451b0e;
+  text-shadow: 0 0 0.5333rem #fdec84,
+      0.2667rem -0.2667rem 0.8rem #ffae35,
+      0.5333rem -0.5333rem 1.0667rem #ec760c,
+      -0.5333rem -1.6rem 1.3333rem #cd4607,
+      0rem -2.1333rem 1.6rem #973717,
+      0.2667rem -1.0667rem 1.8667rem #451b0e;
   animation: mymove;
   -webkit-animation: mymove 5s infinite;
 }
 
 .content {
-  height: auto;
-  padding: 0.2667rem 0;
+  margin: 0.2667rem 0 0;
   color: #FFFFFB;
-  background-color: transparent;
 }
 
-.content .el-carousel__item h3 {
-  color: #475669;
-  font-size: 0.7467rem;
-  opacity: 0;
-  line-height: 10.6667rem;
-  margin: 0;
-}
-
-.content .el-carousel__item:nth-child(2n) {
-  background-color: transparent;
-}
-
-.content .el-carousel__item:nth-child(2n+1) { 
-  background-color: transparent;
+.carousel_info {
+  height: 5.3333rem;
+  margin: 0.5333rem 0 0;
 }
 
 .athor_info {
@@ -236,7 +218,8 @@ export default {
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 162px;
+  height: 4.32rem;
+  transform: translateY(10px)
 }
 
 .athor {
@@ -244,35 +227,25 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  font-size: 18px;
-  color: white;
-  text-shadow: 0 0 20px #fdec84,
-          10px -10px 30px #ffae35,
-          20px -20px 40px #ec760c,
-          -20px -60px 50px #cd4607,
-          0px -80px 60px #973717,
-          10px -40px 70px #451b0e;
-}
-
-.time {
-  font-size: 0.6933rem;
-  color: #999;
-}
-
-.bottom {
-  margin-top: 0.6933rem;
-  line-height: 0.64rem;
-}
-
-.button {
-  padding: 0;
-  float: right;
+  font-size: 0.3733rem;
+  text-shadow: 0 0 0.5333rem #fdec84,
+          0.2667rem -0.2667rem 0.8rem #ffae35,
+          0.5333rem -0.5333rem 1.0667rem #ec760c,
+          -0.5333rem -1.6rem 1.3333rem #cd4607,
+          0rem -2.1333rem 1.6rem #973717,
+          0.2667rem -1.0667rem 1.8667rem #451b0e;
+    transform: scale(0.9);
+  -webkit-transform: scale(0.9); 
 }
 
 .image {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
+}
+
+.contact {
+  margin-top: 0.5333rem;
 }
 
 .clearfix:before,
@@ -285,6 +258,35 @@ export default {
 .clearfix:after {
   clear: both;
   background-color: transparent;
+} 
+
+.time {
+  font: 0.32rem;
+  color: #999;
+  transform: scale(0.8);
+  -webkit-transform: scale(0.8);
 }
 
+.bottom {
+  margin-top: 0.2667rem;
+  padding: 0;
+  float: right;
+  font: 0.32rem;
+  line-height: 1.28rem;
+  transform: scale(0.9);
+  -webkit-transform: scale(0.9);
+} 
+
+
 </style>
+<style>
+.HelloWorld_Mobile .el-carousel__indicator--horizontal {
+  padding: 0.32rem 0.1067rem;
+}
+
+.HelloWorld_Mobile .el-carousel__indicator--horizontal .el-carousel__button {
+  width: 0.8rem;
+  height: 0.0533rem;
+}
+</style>
+
