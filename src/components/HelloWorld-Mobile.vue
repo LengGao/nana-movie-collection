@@ -23,11 +23,11 @@
       <div v-if="isVedioPlay">
         <van-button type="danger"
                     @click="closeIframe"
-                    style="position: fixed;"
+                    style="position: fixed; right: 0;"
                     plain
                     size='mini'>关闭</van-button>
         <iframe ref="myiframe"
-                height='200'
+                height='300'
                 width=100%
                 autoplay='true'
                 :src='playUrl'
@@ -162,7 +162,7 @@ export default {
     coverImg (e, v) {
       this.isVedioPlay = !this.isVedioPlay
       this.playUrl = v
-      // console.log('imgStyContrl:', e, v);
+      // console.log('imgStyContrl:', e, v, this.$ref.myiframe);
     },
     // 关闭播放
     closeIframe () {
@@ -263,8 +263,8 @@ export default {
 .time {
   font: 0.32rem;
   color: #999;
-  transform: scale(0.8);
-  -webkit-transform: scale(0.8);
+  transform: scale(0.6);
+  -webkit-transform: scale(0.6);
 }
 
 .bottom {

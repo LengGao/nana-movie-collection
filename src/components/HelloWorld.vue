@@ -23,7 +23,7 @@
         <el-button type="danger"
                    @click="closeIframe"
                    size='mini'
-                   style="position: fixed;"
+                   style="position: fixed; right: 0;"
                    plain>关闭
         </el-button>
         <iframe ref="myiframe"
