@@ -255,7 +255,7 @@ export default {
 }
 
 .time {
-  font-size: 0.6933rem;
+  font-size: 0.4267rem;
   color: #999;
 }
 

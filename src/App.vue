@@ -1,6 +1,5 @@
 <template>
-  <div id="app"
-       style=" overflow: hidden;">
+  <div id="app" style=" overflow: hidden;">
     <HelloWorldMobile v-if="user_agent" />
     <HelloWorld v-else />
     <myFooter />

@@ -1,6 +1,15 @@
 <template>
   <div class="footer">
-    公安部信息 公安部信息 公安部信息
+  <p>
+    Copyright©2020
+    &nbsp;
+    <a href="//nana-movie.top" target="_blank" title="娜微原创" rel="nofollow" class="footer-record">娜微原创</a>
+    &nbsp;
+    <img src="@/static/img/beian.png" class="footer-icom"/>
+    <a href="http://www.beian.miit.gov.cn/" target="_blank" rel="nofollow" class="footer-record">
+    湘ICP备20002747号-1</a>
+    &nbsp;
+    </p>
   </div>
 </template>
 
@@ -16,11 +25,25 @@ export default {
   position: relative;
   bottom: 0;
   width: 100vw;
-  height: 3.2rem;
+  font-size: 0.3467rem;
   text-align: center;
-  line-height: 3.2rem; 
   vertical-align: middle;
-  color: #FFFFFB;
+  color: #999;
   background-color: transparent;
+}
+.footer-icom {
+  display: inline-block;
+  width: 0.48rem;
+  height: auto;
+  margin-top: -4px;
+  background-size: cover;
+  vertical-align: middle;
+}
+.footer-record {
+  color: #999;
+  font-size: 0.3467rem; 
+}
+a:hover {
+ text-decoration: underline;
 }
 </style>

@@ -261,7 +261,7 @@ export default {
 } 
 
 .time {
-  font: 0.32rem;
+  font-size: 0.4267rem;
   color: #999;
   transform: scale(0.6);
   -webkit-transform: scale(0.6);
