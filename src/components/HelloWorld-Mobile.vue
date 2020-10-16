@@ -90,13 +90,20 @@
         <el-col :span="4">VX：</el-col>
         <el-col :span="10">GL24487</el-col>
       </el-row>
+      <el-row>
+        <my-chat />
+      </el-row>
     </el-dialog>
   </div>
 </template>
 
 <script>
+import chat from './chat.vue'
 export default {
   name: 'HelloWorld-Mobile',
+  components: {
+    "my-chat": chat
+  },
   data () {
     return {
       initial_index: 0,//走马灯其实位置
@@ -287,6 +294,10 @@ export default {
 .HelloWorld_Mobile .el-carousel__indicator--horizontal .el-carousel__button {
   width: 0.8rem;
   height: 0.0533rem;
+}
+
+.el-dialog__body {
+  padding-top: 0;
 }
 </style>
 

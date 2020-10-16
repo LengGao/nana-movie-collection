@@ -80,7 +80,7 @@
     <el-dialog :visible.sync='isVisible'
                title='联系作者'
                :modal='false'
-               width="25%">
+               width="50%">
       <el-row>
         <el-col :span="6">QQ：</el-col>
         <el-col :span="6">2448745034</el-col>
@@ -89,13 +89,20 @@
         <el-col :span="6">VX：</el-col>
         <el-col :span="6">GL24487</el-col>
       </el-row>
+      <el-row>
+        <my-chat />
+      </el-row>
     </el-dialog>
   </div>
 </template>
 
 <script>
+import chat from './chat.vue'
 export default {
   name: 'HelloWorld',
+  components: {
+    "my-chat": chat
+  },
   data () {
     return {
       initial_index: 0,//走马灯其实位置
@@ -285,6 +292,9 @@ export default {
 .clearfix:after {
   clear: both;
   background-color: transparent;
+}
+.el-dialog__body {
+  padding-top: 0;
 }
 
 </style>
