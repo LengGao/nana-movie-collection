@@ -66,9 +66,9 @@
             <img src="@/static/img/woman.jpg"
                  class="image" />
             <div style="padding: 0.2667rem;">
-              <div class="bottom clearfix">
-                <time class="time">{{ currentDate }}</time>
-                <el-button type="text"
+              <div class="bottom clearfix" style="text-align: center;">
+                  <time class="time">{{ currentDate }}&nbsp;&nbsp;&nbsp;</time>
+                  <el-button type="text"
                            class="bottom"
                            @click="isVisible = !isVisible">
                   联系作者</el-button>
@@ -83,12 +83,12 @@
                :modal='false'
                width="80%">
       <el-row>
-        <el-col :span="4">QQ：</el-col>
-        <el-col :span="10">2448745034</el-col>
+        <el-col :span="5">QQ：</el-col>
+        <el-col :span="12">2448745034</el-col>
       </el-row>
       <el-row>
-        <el-col :span="4">VX：</el-col>
-        <el-col :span="10">GL24487</el-col>
+        <el-col :span="5">VX：</el-col>
+        <el-col :span="9">GL24487</el-col>
       </el-row>
       <el-row>
         <my-chat />
@@ -271,7 +271,7 @@ export default {
   font-size: 0.4267rem;
   color: #999;
   transform: scale(0.6);
-  -webkit-transform: scale(0.6);
+  -webkit-transform: scale(  0.6);
 }
 
 .bottom {

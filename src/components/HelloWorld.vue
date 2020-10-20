@@ -65,8 +65,8 @@
             <img src="@/static/img/woman.jpg"
                  class="image" />
             <div style="padding: 28px;">
-              <div class="bottom clearfix">
-                <time class="time">{{ currentDate }}</time>
+              <div class="bottom clearfix" style="text-align: center;">
+                <time class="time">{{ currentDate }} &nbsp;&nbsp;&nbsp; </time>
                 <el-button type="text"
                            class="button"
                            @click="isVisible = !isVisible">

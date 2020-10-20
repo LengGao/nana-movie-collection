@@ -2,7 +2,7 @@
   <div class="chat">
     <el-container class="chat-container">
       <el-header class="chat-header">
-        <h3>机器人小冷，竭诚为您服务</h3>
+        <h5>机器人小冷，竭诚为您服务</h5>
       </el-header>
       <el-main class="chat-main">
         <span> {{new Date()}}</span>
@@ -14,8 +14,9 @@
         </div>
       </el-main>
       <el-footer class="chat-footer">
-        <el-input v-model="input" type="textarea" resize="none" size="medium "></el-input>
-        <el-button @click="websocketsend" class="btn-send" type="primary" >发送</el-button>
+        <el-input class="my-textarea" v-model="input" type="textarea" />
+        <!-- <input class="my-textarea" v-model="input" type="textarea" />  -->
+        <el-button @click="websocketsend" class="btn-send" type="primary" size="mini" >发送</el-button>
       </el-footer>
     </el-container>
   </div>
@@ -33,8 +34,7 @@ export default {
   },
   methods: {
     initWebSocket(){ //初始化weosocket
-      // const wsuri = "ws://121.40.165.18:8800";
-      const wsuri = "ws://175.24.41.213:3010/";
+      const wsuri = "ws://nana-movie.top:8030/";
       this.websock = new WebSocket(wsuri);
       this.websock.onmessage = this.websocketonmessage;
       this.websock.onopen = this.websocketonopen;
@@ -80,7 +80,7 @@ export default {
   margin-top: 0.2667rem;
 }
 .chat-container {
-  height: 16rem;
+  height: 21.3333rem;
   background-color: #B3C0D1;
   color: #333;
 }
@@ -90,7 +90,6 @@ export default {
 .chat-main {
   padding: 0;
   overflow-y: scroll;
-
 }
 .chat-footer { 
   display: flex;
@@ -99,7 +98,11 @@ export default {
   padding: 0;
 }
 .btn-send {
-  height: 53px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 1.4933rem;
+  margin-bottom: 0.1333rem;
 }
 .info-self {
   text-align: right;
@@ -108,5 +111,20 @@ export default {
 .info-other {
   text-align: left;
   color: #439EFf;
+}
+
+.my-textarea {
+    display: block;
+    resize: none;
+    padding-right: 24%;
+    margin-bottom: 0.0533rem;
+    line-height: 1.5;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 1.4933rem;
+    font-size: inherit;
+    color: #606266;
+    background-color: #FFF;
+    background-image: none;
 }
 </style>
